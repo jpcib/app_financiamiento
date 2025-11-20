@@ -1,11 +1,6 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    https://shiny.posit.co/
-#
+#Esto va a cargarse en la rama feat1 
+# La idea es explorar una funcionalidad nueva, sin comprometer 
+# el estado del proyecto en main.
 
 library(shiny)
 
@@ -13,13 +8,13 @@ library(shiny)
 ui <- fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("La vieja y confiable data de géisers"),
 
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
             sliderInput("bins",
-                        "Number of bins:",
+                        "Cantidad de bins:",
                         min = 1,
                         max = 60,
                         value = 30)
@@ -42,8 +37,8 @@ server <- function(input, output) {
 
         # draw the histogram with the specified number of bins
         hist(x, breaks = bins, col = 'darkgray', border = 'white',
-             xlab = 'Waiting time to next eruption (in mins)',
-             main = 'Histogram of waiting times')
+             xlab = 'Tiempo para la próxima erupción (en minutos)',
+             main = 'Histograma de los tiempos de espera')
     })
 }
 
